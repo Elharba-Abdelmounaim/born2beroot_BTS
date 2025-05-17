@@ -1,5 +1,5 @@
-# 42cursus - Born2beroot
-
+#  - Born2beroot
+<img src="" alt="SUDO Video Thumbnail" width="480"/>
 ## Table of Contents
 1. [Installation](#installation)
 2. [*sudo*](#sudo)
