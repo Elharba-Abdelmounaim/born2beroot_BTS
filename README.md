@@ -36,9 +36,7 @@
 
 🎥 [Watch the video for this section](https://youtu.be/7dkTDdkS37Q?si=2ylWK9qEev2Jugix)
 
-At the time of writing, the latest stable version of [Debian](https://www.debian.org) is *Debian 10 Buster*. Watch *bonus* installation walkthrough *(no audio)* [here](https://youtu.be/2w-2MX5QrQw).
-
-
+At the time of writing, the latest stable version of [Debian](https://www.debian.org) is *Debian 10 Buster*. 
 ## *sudo*
 
 🎥 [Watch the video for this section](https://youtu.be/W1-XgQ5DZoU?si=2T-nd9AvQNWAcDRA)
