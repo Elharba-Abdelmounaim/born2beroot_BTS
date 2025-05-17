@@ -1,5 +1,6 @@
 #  - Born2beroot
-<img src="" alt="SUDO Video Thumbnail" width="480"/>
+<img src="![realistic-thumbnail-thumbnail-descriptio_1tQl6O01SOiPCp6EjQytQA_5WCD7Q2sSEWGa2cwJLCHBw](https://github.com/user-attachments/assets/14122927-a510-4ccf-9de9-69a2416960bb)
+" alt="SUDO Video Thumbnail" width="480"/>
 ## Table of Contents
 1. [Installation](#installation)
 2. [*sudo*](#sudo)
