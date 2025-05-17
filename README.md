@@ -31,12 +31,22 @@
        - [Step 1: Installing & Configuring FTP](#step-1-installing--configuring-ftp)
        - [Step 2: Connecting to Server via FTP](#step-2-connecting-to-server-via-ftp)
 
+
 ## Installation
+
+🎥 [Watch the video for this section](https://youtu.be/7dkTDdkS37Q?si=2ylWK9qEev2Jugix)
+
 At the time of writing, the latest stable version of [Debian](https://www.debian.org) is *Debian 10 Buster*. Watch *bonus* installation walkthrough *(no audio)* [here](https://youtu.be/2w-2MX5QrQw).
+
 
 ## *sudo*
 
+🎥 [Watch the video for this section](https://youtu.be/W1-XgQ5DZoU?si=2T-nd9AvQNWAcDRA)
+
 ### Step 1: Installing *sudo*
+...
+
+
 Switch to *root* and its environment via `su -`.
 ```
 $ su -
@@ -119,9 +129,14 @@ To set *sudo* paths to `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:
 Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
 ```
 
+
 ## SSH
 
+🎥 [Watch the video for this section](https://youtu.be/dN-mfzRIjUQ?si=OM-txm89HAfmrIff)
+
 ### Step 1: Installing & Configuring SSH
+...
+
 Install *openssh-server* via `sudo apt install openssh-server`.
 ```
 $ sudo apt install openssh-server
@@ -197,7 +212,11 @@ $ logout
 
 ## User Management
 
+🎥 [Watch the video for this section](https://youtu.be/vL97i2Mhjmk?si=AnvmJpzfhWCr6QcK)
+
 ### Step 1: Setting Up a Strong Password Policy
+...
+
 
 #### Password Age
 Configure password age policy via `sudo vi /etc/login.defs`.
@@ -311,7 +330,11 @@ $ getent group user42
 
 ## *cron*
 
+🎥 [Watch the video for this section](https://youtu.be/GYxPaoR2yBc?si=m5L9A5Owurbf4nk3)
+
 ### Setting Up a *cron* Job
+...
+
 Configure *cron* as *root* via `sudo crontab -u root -e`.
 ```
 $ sudo crontab -u root -e
@@ -351,6 +374,7 @@ $ sudo ufw allow 80
 ```
 
 #### Step 2: Installing & Configuring MariaDB
+🎥 [Watch the video for this section](https://youtu.be/37NiUrHiDYM?si=sA2pOTkbTjOwFVXQ)
 Install *mariadb-server* via `sudo apt install mariadb-server`.
 ```
 $ sudo apt install mariadb-server
@@ -412,6 +436,7 @@ MariaDB [(none)]> exit
 ```
 
 #### Step 3: Installing PHP
+🎥 [Watch the video for this section](https://youtu.be/65z0tqTnCJs?si=tyQXS8Gf18nM1FXE)
 Install *php-cgi* & *php-mysql* via `sudo apt install php-cgi php-mysql`.
 ```
 $ sudo apt install php-cgi php-mysql
@@ -422,6 +447,8 @@ $ dpkg -l | grep php
 ```
 
 #### Step 4: Downloading & Configuring WordPress
+🎥 [Watch the video for this section](https://youtu.be/cvI97KVF8Xk?si=FLEMbhFrldRlb52X)
+
 Install *wget* via `sudo apt install wget`.
 ```
 $ sudo apt install wget
@@ -475,58 +502,3 @@ $ sudo lighty-enable-mod fastcgi-php
 $ sudo service lighttpd force-reload
 ```
 
-### #3: File Transfer Protocol *(FTP)*
-
-#### Step 1: Installing & Configuring FTP
-Install FTP via `sudo apt install vsftpd`.
-```
-$ sudo apt install vsftpd
-```
-Verify whether *vsftpd* was successfully installed via `dpkg -l | grep vsftpd`.
-```
-$ dpkg -l | grep vsftpd
-```
-Allow incoming connections using Port 21 via `sudo ufw allow 21`.
-```
-$ sudo ufw allow 21
-```
-Configure *vsftpd* via `sudo vi /etc/vsftpd.conf`.
-```
-$ sudo vi /etc/vsftpd.conf
-```
-To enable any form of FTP write command, uncomment below line:
-```
-31 #write_enable=YES
-```
-To set root folder for FTP-connected user to `/home/<username>/ftp`, add below lines:
-```
-$ sudo mkdir /home/<username>/ftp
-$ sudo mkdir /home/<username>/ftp/files
-$ sudo chown nobody:nogroup /home/<username>/ftp
-$ sudo chmod a-w /home/<username>/ftp
-<~~~>
-user_sub_token=$USER
-local_root=/home/$USER/ftp
-<~~~>
-```
-To prevent user from accessing files or using commands outside the directory tree, uncomment below line:
-```
-114 #chroot_local_user=YES
-```
-To whitelist FTP, add below lines:
-```
-$ sudo vi /etc/vsftpd.userlist
-$ echo <username> | sudo tee -a /etc/vsftpd.userlist
-<~~~>
-userlist_enable=YES
-userlist_file=/etc/vsftpd.userlist
-userlist_deny=NO
-<~~~>
-```
-
-#### Step 2: Connecting to Server via FTP
-FTP into your virtual machine via `ftp <ip-address>`.
-```
-$ ftp <ip-address>
-```
-Terminate FTP session at any time via `CTRL + D`.
