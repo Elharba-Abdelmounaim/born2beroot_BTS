@@ -1,5 +1,5 @@
 #  - Born2beroot
-
+![Cron Screenshot](realistic-thumbnail-thumbnail-descriptio_1tQl6O01SOiPCp6EjQytQA_5WCD7Q2sSEWGa2cwJLCHBw.jpeg)
 ## Table of Contents
 1. [Installation](#installation)
 2. [*sudo*](#sudo)
